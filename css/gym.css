@@ -1,0 +1,966 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc800;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #ffc800;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc800;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 255, 200, 0;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 200, 0;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;
+    --bs-body-bg: #fff;
+  }
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+/*--------start-header-top---*/
+.about
+{
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+header
+{
+    background-image: url(../img/header.jpg);
+    height:100vh;
+    
+}
+a
+{
+    text-decoration: none;
+}
+header .container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background:linear-gradient(rgb(13, 12, 20) , rgb(80, 54, 145));
+    align-self:flex-end;
+    margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 12;
+    
+}
+
+.container .logo
+{
+    width:80px;
+    
+}
+.container .logo img
+{
+    width: 100%;
+    border-radius: 50%;
+}
+.container ul
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+   font-size: 20px;
+   
+
+}
+.container ul li
+{
+    margin-right:30px;
+    padding: 15px;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+.container ul li a
+{
+    color: white;
+}
+.container ul li:hover
+{
+    
+    background-color: blue;
+    
+}
+
+.navbar
+ {
+  display: none;
+  
+  
+ }
+ button{
+  width:40px;
+  height:30px;
+  border: none;
+  outline: none;
+  background:linear-gradient(rgb(128, 143, 128),blue);
+  padding: 4px;
+  position: fixed;
+  top: 10px;
+  right:30px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  z-index: 13;
+ 
+ }
+ button.active{
+  transform: translate(-100px);
+ }
+ button span
+ {
+  display: block;
+  width: 100%;
+  height:4px;
+  background-color: antiquewhite;
+ }
+ button span:nth-child(2)
+ {
+  margin:5px 0px
+ }
+ nav{
+    background:linear-gradient(rgb(13, 12, 20) , rgb(80, 54, 145));
+  padding: 5px;
+  height: 100vh;
+  width: 120px;
+  position: fixed;
+  right:0px;
+  top: 0px;
+  transform: translate(100%);
+  transition: 1s ease-in-out;
+  z-index: 15;
+ }
+ nav.active{
+  transform: translate(0);
+ }
+ nav ul  li
+ {
+  list-style: none;
+  padding: 10px;
+  border-radius: 10px;
+ 
+  margin-top: 10px;
+  
+ }
+ nav ul  li a
+ {
+  text-decoration: none;
+  padding-left: 20px;
+ }
+  nav ul li:hover
+ {
+ 
+ background-color: blue;
+ 
+ }
+/*--------end-header-top---*/
+/*--------start-header-bottom---*/
+ .header-bottom
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #ced4da;
+    font-size: 40px;
+    flex-direction:column;
+    align-self: center;
+    padding-top: 100px;
+}
+
+.header-bottom h1
+{
+    font-size: 40px;
+    animation-duration: 2s;
+   
+}
+
+.header-bottom p
+{
+    font-size: 30px;
+    animation-duration: 1s;
+}
+/*--------end-header-bottom---*/
+
+/*-------------start --about-top----*/
+.about
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    padding-top: 100px;
+    
+}
+.about h1
+{
+    padding-bottom: 150px ;
+    font-size: 60px;
+    
+}
+.about .container
+{ 
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    flex-direction: row;
+    width: 80%;
+    
+    
+   
+}
+.about .container div
+{
+    
+    background-color: yellow;
+    
+    width:22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    align-self: center;
+}
+.about .container div h2
+{ 
+    
+   padding-bottom: 20px;
+   font-size: 30px;
+   margin-top: 80px;
+    
+}
+.about .container div p
+{ 
+    
+   padding: 20px;
+   font-size: 20px;
+    
+}
+.about .container div  img
+{
+    border: 5px solid rgb(251, 251, 101) ;
+    position: absolute;
+    top:-70px;
+    z-index: 1;
+    width: 50%;
+    margin-bottom: 20px;
+}
+.fa-arrow-right
+{
+    color:black;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+/*------------end --about-----*/
+
+
+/*------------start --fixed-img-----*/
+
+.fixed-img
+{
+    background-image: url(../img/fixed.jpg);
+    width:100%;
+    background-attachment: fixed;
+    height:40vh;
+    object-fit: cover;
+    background-position: top;
+    
+    background-size: cover;
+
+}
+.a
+{
+    height: 500vh;
+}
+
+
+/*------------end --fixed-img-----*/
+/*------------start --info-----*/
+.info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+    justify-content: center;
+}
+.info h1
+{
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+.info p
+{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.info .container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.info .container .top 
+{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-direction: row;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.info .container .top  div
+{
+    position: relative;
+}
+
+.info .container .top  img 
+{
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+.info .container .top  button
+{
+    position: absolute;
+   top:50%;
+   left:10%;
+    background-color: yellow;
+    z-index: 10;
+    font-size: 25px;
+    background:linear-gradient(yellow , yellow);
+    width: auto;
+    height:10%;
+    color: black;
+}
+/*------------end --info-----*/
+/*------------start --acount-----*/
+.acount
+{
+    background-image: url(../img/info.jpg);
+    height:100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+.fa-instagram
+{
+    font-size: 100px;
+    color: yellow;
+    padding-bottom: 50px;
+}
+.acount h1
+{
+    font-size: 50px;
+    padding: 10px;
+}
+.acount h3
+{
+    font-size: 30px;
+}
+.acount a
+{
+    color:yellow;
+}
+/*------------end --acount-----*/
+/*------------start --trainers-----*/
+.trainers
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 100px 0 50px 0;
+    width: 100%;
+}
+.trainers .container
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+   
+}
+.trainers h1
+{
+    font-size: 50px;
+}
+.trainers p
+{
+    font-size: 20px;
+}
+.trainers .container .top
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 50px;
+}
+.trainers .container .bottom
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+        
+}
+.trainers .container .bottom div
+{
+    width:45%;
+    margin:5px auto
+}
+.trainers .container .bottom img
+{
+    width:100%;
+    background-repeat:repeat;
+    flex-wrap: wrap;
+    background-size: cover;
+   
+    
+}
+/*--------------------end---trainers--------*/
+/*--------------------start------contact-------*/
+.contact
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: yellow;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    
+    padding: 30px;
+   
+}
+form div
+{
+    width:100%;
+    margin: 10px;
+}
+
+form input
+{
+    width:50%;
+    height:5vh;
+    flex-wrap: wrap;
+    display: block;
+    padding: 20px;
+}
+
+.message
+{
+   height:10vh;
+}
+form .btn
+{
+    width:50%;
+    height:5vh;
+    flex-wrap: wrap;
+    display: block;
+    padding: 20px;  
+    background-color: black;
+    color: white;
+}
+.contact img
+{
+    width:60%;
+    height:100%;
+}
+.up
+{
+    position: fixed;
+    right:25px;
+    bottom: 25px;
+    background-color: rgb(22, 22, 22);
+    color: blue;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:767px)
+{
+    .about
+{
+    height:auto;
+    display: flex;
+    flex-direction: column;
+}
+    header
+    {
+        overflow: hidden;
+        background-position: top;
+        display: block;
+        height: 100vh;
+      
+    }
+    header .container
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+      
+        
+    }
+    header   .container .logo
+    {
+        font-size: 20px;
+    }
+    header .container ul 
+    {
+        display: none;
+
+    }
+    .header-bottom
+    {
+        height: 100vh;
+        margin-bottom: 200px;
+    }
+    .navbar
+    {
+       
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+       
+    }
+    .header-bottom img
+    {
+        width: 120px;
+
+    }
+    .header-bottom h1
+    {
+       font-size: 40px;
+
+    }
+    .header-bottom p
+    {
+        font-size: 40px;
+
+    }
+    .about
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction:column;
+    padding-top: 50px;
+   
+    
+}
+   
+    .about .container
+    { 
+        display: flex;
+       
+        margin: auto;
+        flex-direction: column;
+        width: 80%;
+        
+        
+       
+    }
+    .about h1
+    {
+        padding: 50px;
+        z-index: 10;
+        font-size: 40px;
+    }
+
+    .about .container div
+    {
+        width: 100%;
+        margin: 40px auto;
+        position: relative;
+
+    }
+    .about .container div img
+    {
+        width: 20%;
+        position: absolute;
+        top:-40px;
+    }
+
+
+    .info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+}
+.info h1
+{
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+.info p
+{
+    display: none;
+}
+.info .container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+   
+}
+.info .container .top 
+{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-direction: row;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.info .container .top  div
+{
+    position: relative;
+    width: 100%;
+}
+
+.info .container .top  img 
+{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.info .container .top  button
+{
+    position: absolute;
+   top:50%;
+   left:10%;
+    background-color: yellow;
+    z-index: 10;
+    font-size: 25px;
+    background:linear-gradient(yellow , yellow);
+    width: auto;
+    height:10%;
+    color: black;
+}
+.acount h1
+{
+    font-size: 40px;
+    padding: 10px;
+}
+.acount h3
+{
+    font-size: 20px;
+}
+.trainers .container
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   
+}
+.trainers .container .bottom
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.trainers .container .bottom div
+{
+    width:100%
+}
+.trainers .container .bottom img
+{
+   width:100%;
+}
+.contact
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: yellow;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    
+    
+   
+}
+form div
+{
+    width:100%;
+    margin: 10px;
+}
+
+form input
+{
+    width:90%;
+    height:5vh;
+    flex-wrap: wrap;
+    display: block;
+    
+}
+
+.message
+{
+   height:10vh;
+}
+form .btn
+{
+    width:90%;
+    height:5vh;
+    flex-wrap: wrap;
+    display: block;
+    padding: 20px;  
+    background-color: black;
+    color: white;
+}
+.contact img
+{
+    width:100%;
+    height:100%;
+    background-attachment: fixed;
+    background-size: cover;
+    object-fit: cover;
+}
+}
+
+
+
+
+
+
+
+
+@media(min-width:768px)and (max-width:991px)
+{
+    .header-bottom img
+    {
+        width: 160px;
+
+    }
+    .header-bottom h1
+    {
+       font-size: 40px;
+
+    }
+    .about
+    {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-direction:column;
+        padding-top: 50px;
+       
+       
+        
+    }
+    
+     .about .container
+ { 
+     display: flex;
+    margin: 20px;
+    padding: auto;
+     flex-direction:row;
+     width: 100%;
+     
+     
+    
+ }
+    .about h1
+    {
+        padding: 50px;
+        z-index: 10;
+        font-size: 40px;
+    }
+
+    .about .container div
+    {
+        width: 50%;
+        margin: 40px 10px;
+        position: relative;
+
+    }
+    .about .container div img
+    {
+        width: 30%;
+        position: absolute;
+        top:-20px;
+    }
+      
+  /*-----------------------start---re-info-------------------------------------------*/
+.info p
+{
+   padding: 30px;
+}
+.info .container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+   
+}
+.info .container .top 
+{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-direction: row;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.info .container .top  div
+{
+    position: relative;
+    width: 48%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.info .container .top  img 
+{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.info .container .top  button
+{
+    position: absolute;
+   top:50%;
+   left:10%;
+    background-color: yellow;
+    z-index: 10;
+    font-size: 25px;
+    background:linear-gradient(yellow , yellow);
+    width: auto;
+    height:10%;
+    color: black;
+}
+ /*-----------------------end---re-info-------------------------------------------*/
+ .trainers .container .bottom
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+ .trainers .container .bottom div
+{
+    width:50%
+}
+.trainers .container .bottom img
+{
+   width:100%;
+}
+}
+@media(min-width:992)
+{
+    .trainers .container .bottom
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+ .trainers .container .bottom div
+{
+    width:0%
+}
+.trainers .container .bottom img
+{
+   width:100%;
+}
+}
